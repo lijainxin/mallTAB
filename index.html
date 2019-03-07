@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/css.css">
+    <title>mall TAB</title>
+</head>
+
+<body>
+    <header>
+        <h2>商品索引</h2>
+    </header>
+
+
+    <nav class="tab">
+        <ul>
+            <li class="active" index="0">食品</li>
+            <li>服装</li>
+            <li>书籍</li>
+            <li>手机</li>
+        </ul>
+    </nav>
+    <div class="main">
+        <div style="disply:block" class="red" index="0">
+            <form action="" method="POST" oninput="total.value=parseInt(price.value)-parseInt(discount.value)">
+                <span>原价：0</span><input type="range" id="price" min="2" max="100"><span>100元</span>
+                <br />
+                <span>折扣：</span><input type="number" value="2" min="2" max="2" id="discount"><span>元</span>
+                <br />
+                <span>现价：<output id="total"></output> 元</span> <br />
+                <span>类别：</span><input type="text" list="url_list" name="text" />
+                <datalist id="url_list">
+                    <option label="水果" value="水果" />
+                    <option label="膨化食品" value="膨化食品" />
+                    <option label="坚果" value="坚果" />
+                    <option label="方便面" value="方便面" />
+                </datalist>
+                <span><button type="submit" id="button01">提交</button></span>
+            </form>
+        </div>
+        <div class="green cloak">
+            <form action="" method="POST" oninput="total02.value=parseInt(price02.value)-parseInt(discount02.value)">
+                <span>原价：0</span><input type="range" id="price02" min="2" max="3000"><span>3000元</span>
+                <br />
+                <span>折扣：</span><input type="number" value="2" min="2" max="2" id="discount02"><span>元</span>
+                <br />
+                <span>现价：<output id="total02"></output> 元</span> <br />
+                <span>类别：</span><input type="text" list="url_list02" name="text02" />
+                <datalist id="url_list02">
+                    <option label="Adidas" value="Adidas" />
+                    <option label="Nike" value="Nike" />
+                    <option label="李宁" value="李宁" />
+                    <option label="安踏" value="安踏" />
+                </datalist>
+                <span><button type="submit" id="button02">提交</button></span>
+            </form>
+        </div>
+        <div class="yellow cloak">
+            <form action="" method="POST" oninput="total03.value=parseInt(price03.value)-parseInt(discount03.value)">
+                <span>原价：0</span><input type="range" id="price03" min="20"><span>500元</span>
+                <br />
+                <span>折扣：</span><input type="number" value="2" min="2" max="20" id="discount03"><span>元</span>
+                <br />
+                <span>现价：<output id="total03"></output> 元</span> <br />
+                <span>类别：</span><input type="text" list="url_list03" name="text03" />
+                <datalist id="url_list03">
+                    <option label="数学书" value="数学书" />
+                    <option label="语文书" value="语文书" />
+                    <option label="地理书" value="地理书" />
+                    <option label="化学书" value="化学书" />
+                </datalist>
+                <span><button type="submit" id="button03">提交</button></span>
+            </form>
+        </div>
+        <div class="pink cloak">
+            <form action="" method="POST" oninput="total04.value=parseInt(price04.value)-parseInt(discount04.value)">
+                <span>原价：0</span><input type="range" id="price04" min="1000" max="5000"><span>5000元</span>
+                <br />
+                <span>折扣：</span><input type="number" value="2" min="2" max="20" id="discount04"><span>元</span>
+                <br />
+                <span>现价：<output id="total04"></output> 元</span> <br />
+                <span>类别：</span><input type="text" list="url_list04" name="text04" />
+                <datalist id="url_list04">
+                    <option label="Apple" value="Apple" />
+                    <option label="huawei" value="huawei" />
+                    <option label="meizu" value="meizu" />
+                    <option label="xiaomi" value="xiaomi" />
+                </datalist>
+                <span><button type="submit" id="button04">提交</button></span>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        var tab = document.getElementsByClassName("tab")[0];
+        var aLis = tab.getElementsByTagName("li");
+        var main = document.getElementsByClassName("main")[0];
+        var aDivs = main.getElementsByTagName("div");
+        for (var i = 0; i < aLis.length; i++) {
+            aLis[i].index = i;
+            aLis[i].onclick = function () {
+                for (var j = 0; j < aLis.length; j++) {
+                    aDivs[j].style.display = "none";
+                    aDivs[this.index].style.display = 'block'; 
+                    aLis[j].className = "black";
+                    this.className = "active"
+                  }
+             }
+         }
+    }
+
+
+</script>
+
+</html>
